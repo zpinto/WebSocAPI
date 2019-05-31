@@ -6,16 +6,6 @@ import time
 import re
 
 
-filters = {
-    'YearTerm': 'Year and Term',
-    'Breadth': 'Breadth Ex. AFAM, ANATOMY, ART',
-    'Dept': 'Department Ex. AFAM, ANATOMY, ART',
-    'CourseNum': 'Course Number Ex. 53, 53L',
-    'Division': 'Division Ex. ANY, 0xx, 1xx, 2xx',
-    'CourseCodes': 'Course Codes Ex. 14200, 29000-29010'
-}
-
-
 def get_class_info(base_url, path, args_dict):
     classes = {}
     url = format_url(base_url, path, args_dict)
