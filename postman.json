@@ -1,0 +1,86 @@
+{
+	"info": {
+		"_postman_id": "cd00963c-f809-4f28-9d3e-3a376ad5d333",
+		"name": "WebSoc Endpoints",
+		"description": "# Introduction\nReturns data on UCI classes by scrapping WebSoc. Classes can be filtered by departments and breadths, as well as other query paramteters.\n\n# Overview\nThis service is in its early stages and will likely see significant updates, deprecating functionalities currently avaliable.\n\n# Authentication\nThere is no authentication in this iteration of the service.\n\n# Error Codes\n200 - data was returned ok\n404 - data not found\n500 - internal server error\n\n# Rate limit\nThere is no limit on the number of requests. A future iteration of this API will have authentication and all users will have to register and be approved. Upon approval, your account will be created.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [{
+			"name": "/filters",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{url}}/filters",
+				"description": "Returns all of the possible filters that can be used to select classes.",
+				"body": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/Breadths",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{url}}/Breadths",
+				"description": "Gives a list of the possible breadths maped to their codes.",
+				"body": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/Breadth/<breadth_name>",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{url}}/Breadth/2",
+				"description": "Returns all of the classes under a specified Breadth",
+				"body": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/Depts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{url}}/Depts",
+				"description": "Gives a list of all of the possible departments mapped to their code.",
+				"body": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/Dept/<department_name>",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{url}}/Dept/I&C SCI",
+				"description": "Returns all of the classes under a specified Department.",
+				"body": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/YearTerms",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{url}}/YearTerms",
+				"description": "Gives a list of the possible YearTerms mapped to their code.",
+				"body": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/Divisions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{url}}/Divisions",
+				"description": "Gives a list of the possible Divisions with their codes.",
+				"body": ""
+			},
+			"response": []
+		}
+	]
+}
