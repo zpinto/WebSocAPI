@@ -1,16 +1,16 @@
-import urlfetch
+import html5lib
 from bs4 import BeautifulSoup
 import urllib.request
 import time
 import re
-import html5lib
 # from selenium import webdriver
 
 BASE_URL = "http://www.reg.uci.edu/perl/WebSoc?"
-DEPT_CONST = "AFAM"
+DEPT_CONST = "I&C SCI"
 DIVISION_CONST = "0xx"
 YEARTERM = "2019-92"
 SHOWFINALS = "true"
+COURSENUM = "53"
 
 
 def format_url(base_url, path, args_dict):
@@ -34,7 +34,7 @@ def get_html(url):
 
 def get_select(select_type):
     department_dict = {}
-    soup = BeautifulSoup(get_html(BASE_URL), "html.parser")
+    soup = BeautifulSoup(get_html(BASE_URL), "html5lib")
     for select in soup.find_all("select"):
         if select.get('name') == select_type:
             for option in select.find_all("option"):
@@ -119,18 +119,22 @@ def get_class_info(base_url, path, args_dict):
     return classes
 
 
-args_dict = {
+args_dict1 = {
+    'YearTerm': YEARTERM,
     'Dept': DEPT_CONST,
     'Division': DIVISION_CONST,
-    'YearTerm': YEARTERM,
-    'ShowFinals': SHOWFINALS
+    'ShowFinals': SHOWFINALS,
+    'CourseNum': COURSENUM,
 }
 
-args_dict1 = {
-    'Dept': DEPT_CONST,
-    'YearTerm': YEARTERM,
-    'ShowFinals': SHOWFINALS
+filters = {
+    'YearTerm': 'Year and Term',
+    'Breadth': 'Breadth Ex. AFAM, ANATOMY, ART',
+    'Dept': 'Department Ex. AFAM, ANATOMY, ART',
+    'CourseNum': 'Course Number Ex. 53, 53L',
+    'Division': 'Division Ex. ANY, 0xx, 1xx, 2xx',
+    'CourseCodes': 'Course Codes Ex. 14200, 29000-29010'
 }
 
-print(get_class_info(BASE_URL, "", args_dict1)['20240'])
+print(get_class_info(BASE_URL, "", args_dict1))
 # print(get_select("ClassType"))
