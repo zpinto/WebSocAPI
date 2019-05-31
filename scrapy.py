@@ -1,16 +1,49 @@
-import html5lib
 from bs4 import BeautifulSoup
+from config import BASE_URL
 import urllib.request
+import html5lib
 import time
 import re
-# from selenium import webdriver
 
-BASE_URL = "http://www.reg.uci.edu/perl/WebSoc?"
-DEPT_CONST = "I&C SCI"
-DIVISION_CONST = "0xx"
-YEARTERM = "2019-92"
-SHOWFINALS = "true"
-COURSENUM = "53"
+
+filters = {
+    'YearTerm': 'Year and Term',
+    'Breadth': 'Breadth Ex. AFAM, ANATOMY, ART',
+    'Dept': 'Department Ex. AFAM, ANATOMY, ART',
+    'CourseNum': 'Course Number Ex. 53, 53L',
+    'Division': 'Division Ex. ANY, 0xx, 1xx, 2xx',
+    'CourseCodes': 'Course Codes Ex. 14200, 29000-29010'
+}
+
+
+def get_class_info(base_url, path, args_dict):
+    classes = {}
+    url = format_url(base_url, path, args_dict)
+    soup = BeautifulSoup(get_html(url), "html5lib").find(
+        'div', class_="course-list")
+    if not soup:
+        return None
+    course_list = soup.find_all('tr')
+    for tr in course_list:
+        fields = [
+            td.string if td.string else format_instructor_string(str(td)) for td in tr.find_all('td')]
+        if len(fields) == 17:
+            class_entry = format_class_entry(fields)
+            classes[class_entry['code']] = class_entry
+    return classes
+
+
+# get the values of the select category possible
+def get_select(select_type):
+    department_dict = {}
+    soup = BeautifulSoup(get_html(BASE_URL), "html5lib")
+    for select in soup.find_all("select"):
+        if select.get('name') == select_type:
+            for option in select.find_all("option"):
+                department_dict[option.get('value')] = option.text
+            break
+
+    return department_dict
 
 
 def format_url(base_url, path, args_dict):
@@ -25,23 +58,6 @@ def get_html(url):
     with urllib.request.urlopen(url) as response:
         html = response.read().decode()
     return html
-
-
-''' Dept, Breadth, YearTerm, Division '''
-
-# get the values of the select category possible
-
-
-def get_select(select_type):
-    department_dict = {}
-    soup = BeautifulSoup(get_html(BASE_URL), "html5lib")
-    for select in soup.find_all("select"):
-        if select.get('name') == select_type:
-            for option in select.find_all("option"):
-                department_dict[option.get('value')] = option.text
-            break
-
-    return department_dict
 
 
 def format_class_entry(class_fields):
@@ -102,39 +118,3 @@ def format_instructor_string(td):
 
     new_str = new_str.strip('/')
     return new_str
-
-
-def get_class_info(base_url, path, args_dict):
-    classes = {}
-    url = format_url(base_url, path, args_dict)
-    soup = BeautifulSoup(get_html(url), "html5lib").find(
-        'div', class_="course-list")
-    course_list = soup.find_all('tr')
-    for tr in course_list:
-        fields = [
-            td.string if td.string else format_instructor_string(str(td)) for td in tr.find_all('td')]
-        if len(fields) == 17:
-            class_entry = format_class_entry(fields)
-            classes[class_entry['code']] = class_entry
-    return classes
-
-
-args_dict1 = {
-    'YearTerm': YEARTERM,
-    'Dept': DEPT_CONST,
-    'Division': DIVISION_CONST,
-    'ShowFinals': SHOWFINALS,
-    'CourseNum': COURSENUM,
-}
-
-filters = {
-    'YearTerm': 'Year and Term',
-    'Breadth': 'Breadth Ex. AFAM, ANATOMY, ART',
-    'Dept': 'Department Ex. AFAM, ANATOMY, ART',
-    'CourseNum': 'Course Number Ex. 53, 53L',
-    'Division': 'Division Ex. ANY, 0xx, 1xx, 2xx',
-    'CourseCodes': 'Course Codes Ex. 14200, 29000-29010'
-}
-
-print(get_class_info(BASE_URL, "", args_dict1))
-# print(get_select("ClassType"))
