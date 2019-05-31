@@ -1,9 +1,6 @@
-selenium
 bs4
 urllib3
-lxml
-urlfetch
 html5lib
-Flask-JWT-Extended
-Flask-RESTful
-Flask-SQLAlchemy
+Flask-RESTful==0.3.7
+Flask==1.0.2
+Werkzeug==0.15.4
