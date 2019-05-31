@@ -3,10 +3,10 @@ from scrapy import get_class_info, get_select
 from config import BASE_URL, REQUIRED_ARGS
 
 
-class Breadth(Resource):
-    def get(self, breadth_name):
+class Dept(Resource):
+    def get(self, department_name):
         args = REQUIRED_ARGS
-        args['Breadth'] = breadth_name
+        args['Dept'] = department_name
         classes = get_class_info(BASE_URL, "", args)
 
         if classes:
@@ -15,6 +15,6 @@ class Breadth(Resource):
             return {'message': 'Cannot find classes'}, 404
 
 
-class BreadthList(Resource):
+class DeptList(Resource):
     def get(self):
-        return get_select('Breadth'), 200
+        return get_select('Dept'), 200
