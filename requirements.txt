@@ -4,3 +4,6 @@ urllib3
 lxml
 urlfetch
 html5lib
+Flask-JWT-Extended
+Flask-RESTful
+Flask-SQLAlchemy
