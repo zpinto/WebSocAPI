@@ -11,10 +11,40 @@
 				"method": "GET",
 				"header": [],
 				"url": "{{url}}/filters",
-				"description": "Returns all of the possible filters that can be used to select classes.",
+				"description": "Returns all of the possible filters/query params that can be used to select classes.",
 				"body": ""
 			},
-			"response": []
+			"response": [{
+				"name": "/filters",
+				"originalRequest": {
+					"method": "GET",
+					"header": [],
+					"url": "{{url}}/filters",
+					"body": ""
+				},
+				"status": "OK",
+				"code": 200,
+				"_postman_previewlanguage": "json",
+				"header": [{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Length",
+						"value": "289"
+					},
+					{
+						"key": "Server",
+						"value": "Werkzeug/0.12.2 Python/3.7.3"
+					},
+					{
+						"key": "Date",
+						"value": "Fri, 31 May 2019 23:18:10 GMT"
+					}
+				],
+				"cookie": [],
+				"body": "{\n    \"YearTerm\": \"Year and Term\",\n    \"Breadth\": \"Breadth Ex. AFAM, ANATOMY, ART\",\n    \"Dept\": \"Department Ex. AFAM, ANATOMY, ART\",\n    \"CourseNum\": \"Course Number Ex. 53, 53L\",\n    \"Division\": \"Division Ex. ANY, 0xx, 1xx, 2xx\",\n    \"CourseCodes\": \"Course Codes Ex. 14200, 29000-29010\"\n}"
+			}]
 		},
 		{
 			"name": "/Breadths",
@@ -22,18 +52,48 @@
 				"method": "GET",
 				"header": [],
 				"url": "{{url}}/Breadths",
-				"description": "Gives a list of the possible breadths maped to their codes.",
+				"description": "Returns a list of the possible breadths maped to their codes.",
 				"body": ""
 			},
-			"response": []
+			"response": [{
+				"name": "/Breadths",
+				"originalRequest": {
+					"method": "GET",
+					"header": [],
+					"url": "{{url}}/Breadths",
+					"body": ""
+				},
+				"status": "OK",
+				"code": 200,
+				"_postman_previewlanguage": "json",
+				"header": [{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Length",
+						"value": "1165"
+					},
+					{
+						"key": "Server",
+						"value": "Werkzeug/0.12.2 Python/3.7.3"
+					},
+					{
+						"key": "Date",
+						"value": "Fri, 31 May 2019 23:17:58 GMT"
+					}
+				],
+				"cookie": [],
+				"body": "{\n    \"2\": \"Breadth II: Natural Sciences\",\n    \"3\": \"Breadth III: Social and Behavioral Sciences\",\n    \"4\": \"Breadth IV: Humanistic Inquiry\",\n    \"5\": \"Breadth V: Mathematics and Symbolic Systems\",\n    \"6\": \"Breadth VI: Language Other Than English\",\n    \"ANY\": \"    --- Breadth categories (prior to Fall 2008) ---\",\n    \"GE-1A\": \"GE Ia: Lower Division Writing\",\n    \"GE-1B\": \"GE Ib: Upper Division Writing\",\n    \"GE-2\": \"GE II: Science and Technology\",\n    \"GE-3\": \"GE III: Social and Behavioral Sciences\",\n    \"GE-4\": \"GE IV: Arts and Humanities\",\n    \"GE-5A\": \"GE Va: Quantitative Literacy (starting Fall 2012)\",\n    \"GE-5B\": \"GE Vb: Formal Reasoning (starting Fall 2012)\",\n    \"GE-6\": \"GE VI: Language other than English\",\n    \"GE-7\": \"GE VII: Multicultural Studies\",\n    \"GE-8\": \"GE VIII: International/Global Issues\",\n    \"GE-5\": \"GE V: Quantitative, Symbolic, and Computational Reasoning\",\n    \"GE-9\": \"GE IX: Laboratory or Performance\",\n    \"1A\": \"Breadth Ia: Lower Division Writing\",\n    \"1B\": \"Breadth Ib: Upper Division Writing\",\n    \"7A\": \"Breadth VIIa: Multicultural Studies\",\n    \"7B\": \"Breadth VIIb: International/global Issues\"\n}"
+			}]
 		},
 		{
 			"name": "/Breadth/<breadth_name>",
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "{{url}}/Breadth/2",
-				"description": "Returns all of the classes under a specified Breadth",
+				"url": "{{url}}/Breadth/4",
+				"description": "Returns all of the classes under a specified Breadth.",
 				"body": ""
 			},
 			"response": []
@@ -44,21 +104,81 @@
 				"method": "GET",
 				"header": [],
 				"url": "{{url}}/Depts",
-				"description": "Gives a list of all of the possible departments mapped to their code.",
+				"description": "Returns a list of all of the possible departments mapped to their code.",
 				"body": ""
 			},
-			"response": []
+			"response": [{
+				"name": "/Depts",
+				"originalRequest": {
+					"method": "GET",
+					"header": [],
+					"url": "{{url}}/Depts",
+					"body": ""
+				},
+				"status": "OK",
+				"code": 200,
+				"_postman_previewlanguage": "json",
+				"header": [{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Length",
+						"value": "8311"
+					},
+					{
+						"key": "Server",
+						"value": "Werkzeug/0.12.2 Python/3.7.3"
+					},
+					{
+						"key": "Date",
+						"value": "Fri, 31 May 2019 23:12:26 GMT"
+					}
+				],
+				"cookie": [],
+				"body": "{\n    \" ALL\": \"Include All Departments\",\n    \"AC ENG\": \"AC ENG . . . . . .Academic English and ESL\",\n    \"AFAM\": \"AFAM . . . . . . . African American Studies\",\n    \"ANATOMY\": \"ANATOMY . . . .Anatomy and Neurobiology\",\n    \"ANESTH\": \"ANESTH . . . . . Anesthesiology\",\n    \"ANTHRO\": \"ANTHRO . . . . . Anthropology\",\n    \"ARABIC\": \"ARABIC . . . . . .Arabic\",\n    \"ARMN\": \"ARMN . . . . . . .Armenian (started 2018 Spg)\",\n    \"ART\": \"ART . . . . . . . . .Art\",\n    \"ART HIS\": \"ART HIS . . . . . .Art History\",\n    \"ARTS\": \"ARTS . . . . . . . Arts\",\n    \"ARTSHUM\": \"ARTSHUM . . . . Arts and Humanities\",\n    \"ASIANAM\": \"ASIANAM . . . . Asian American Studies\",\n    \"BANA\": \"BANA . . . . . . . Business Analytics (started 2017 SS2)\",\n    \"BATS\": \"BATS . . . . . . . Biomedical and Translational Science\",\n    \"BIO SCI\": \"BIO SCI . . . . . .Biological Sciences\",\n    \"BIOCHEM\": \"BIOCHEM . . . . Biological Chemistry\",\n    \"BME\": \"BME . . . . . . . . Biomedical Engineering\",\n    \"BSEMD\": \"BSEMD . . . . . .Bio Sci & Educational Media Design (until 2017 Wtr)\",\n    \"CAMPREC\": \"CAMPREC . . . .Campus Recreation\",\n    \"CBE\": \"CBE . . . . . . . . Chemical and Biomolecular Engineering (started 2018 Fall)\",\n    \"CBEMS\": \"CBEMS . . . . . .Chemical Engr and Materials Science\",\n    \"CEM\": \"CEM . . . . . . . . Community and Environmental Medicine\",\n    \"CHC/LAT\": \"CHC/LAT . . . . . Chicano Latino\",\n    \"CHEM\": \"CHEM . . . . . . .Chemistry\",\n    \"CHINESE\": \"CHINESE . . . . .Chinese\",\n    \"CLASSIC\": \"CLASSIC . . . . .Classics\",\n    \"CLT&THY\": \"CLT&THY . . . . .Culture & Theory\",\n    \"COGS\": \"COGS . . . . . . . Cognitive Sciences  (started 2016 Fall)\",\n    \"COM LIT\": \"COM LIT . . . . . Comparative Literature\",\n    \"COMPSCI\": \"COMPSCI . . . . Computer Science\",\n    \"CRITISM\": \"CRITISM . . . . . Criticism\",\n    \"CRM/LAW\": \"CRM/LAW . . . . Criminology, Law and Society\",\n    \"CSE\": \"CSE . . . . . . . . Computer Science and Engineering\",\n    \"DANCE\": \"DANCE . . . . . . Dance\",\n    \"DERM\": \"DERM . . . . . . .Dermatology\",\n    \"DEV BIO\": \"DEV BIO . . . . . Developmental and Cell Biology\",\n    \"DRAMA\": \"DRAMA . . . . . .Drama\",\n    \"E ASIAN\": \"E ASIAN . . . . . East Asian Languages and Literatures (until 2019 SS2)\",\n    \"EARTHSS\": \"EARTHSS . . . . Earth System Science\",\n    \"EAS\": \"EAS . . . . . . . . East Asian Studies (started 2019 Fall)\",\n    \"ECO EVO\": \"ECO EVO . . . . Ecology and Evolutionary Biology\",\n    \"ECON\": \"ECON . . . . . . . Economics\",\n    \"ECPS\": \"ECPS . . . . . . . Embedded and Cyber-Physical Systems (started 2014 Spg)\",\n    \"ED AFF\": \"ED AFF . . . . . .Educational Affairs (Sch of Med)\",\n    \"EDUC\": \"EDUC . . . . . . . Education\",\n    \"EECS\": \"EECS . . . . . . . Electrical Engineering & Computer Science\",\n    \"EHS\": \"EHS . . . . . . . . Environmental Health Sciences\",\n    \"ENGLISH\": \"ENGLISH . . . . .English\",\n    \"ENGR\": \"ENGR . . . . . . . Engineering\",\n    \"ENGRCEE\": \"ENGRCEE . . . .Engineering, Civil and Environmental\",\n    \"ENGRMAE\": \"ENGRMAE . . . .Engineering, Mechanical and Aerospace\",\n    \"ENGRMSE\": \"ENGRMSE . . . .Materials Science and Engineering\",\n    \"EPIDEM\": \"EPIDEM . . . . . .Epidemiology\",\n    \"ER MED\": \"ER MED . . . . . Emergency Medicine\",\n    \"EURO ST\": \"EURO ST . . . . .European Studies\",\n    \"FAM MED\": \"FAM MED . . . . Family Medicine\",\n    \"FIN\": \"FIN . . . . . . . . . Finance (started 2017 Fall)\",\n    \"FLM&MDA\": \"FLM&MDA . . . .Film and Media Studies\",\n    \"FRENCH\": \"FRENCH . . . . . French\",\n    \"GEN&SEX\": \"GEN&SEX . . . . Gender and Sexuality Studies (started 2014 Fall)\",\n    \"GERMAN\": \"GERMAN . . . . .German\",\n    \"GLBL ME\": \"GLBL ME . . . . .Global Middle East Studies (started 2016 Fall)\",\n    \"GLBLCLT\": \"GLBLCLT . . . . .Global Cultures\",\n    \"GREEK\": \"GREEK . . . . . . Greek\",\n    \"HEBREW\": \"HEBREW . . . . .Hebrew\",\n    \"HINDI\": \"HINDI . . . . . . . .Hindi\",\n    \"HISTORY\": \"HISTORY . . . . .History\",\n    \"HUMAN\": \"HUMAN . . . . . .Humanities\",\n    \"HUMARTS\": \"HUMARTS . . . . Humanities and Arts\",\n    \"I&C SCI\": \"I&C SCI . . . . . . Information and Computer Science\",\n    \"IN4MATX\": \"IN4MATX . . . . . Informatics\",\n    \"INNO\": \"INNO . . . . . . . .Masters of Innovation and Entrepreneurship (started 2019 Fall)\",\n    \"INT MED\": \"INT MED . . . . . Internal Medicine\",\n    \"INTL ST\": \"INTL ST . . . . . . International Studies\",\n    \"ITALIAN\": \"ITALIAN . . . . . .Italian\",\n    \"JAPANSE\": \"JAPANSE . . . . Japanese\",\n    \"KOREAN\": \"KOREAN . . . . .Korean\",\n    \"LATIN\": \"LATIN . . . . . . . Latin\",\n    \"LAW\": \"LAW . . . . . . . . Law\",\n    \"LINGUIS\": \"LINGUIS . . . . . .Linguistics (until 2019 SS2)\",\n    \"LIT JRN\": \"LIT JRN . . . . . . Literary Journalism\",\n    \"LPS\": \"LPS . . . . . . . . .Logic and Philosophy of Science\",\n    \"LSCI\": \"LSCI . . . . . . . . Language Science (started 2019 Fall)\",\n    \"M&MG\": \"M&MG . . . . . . .Microbiology and Molecular Genetics\",\n    \"MATH\": \"MATH . . . . . . . Mathematics\",\n    \"MED\": \"MED . . . . . . . . Medicine\",\n    \"MED ED\": \"MED ED . . . . . Medical Education\",\n    \"MED HUM\": \"MED HUM . . . . Medical Humanities (started 2016 Fall)\",\n    \"MGMT\": \"MGMT . . . . . . .Management\",\n    \"MGMT EP\": \"MGMT EP . . . . Executive MBA\",\n    \"MGMT FE\": \"MGMT FE . . . . Fully Employed MBA\",\n    \"MGMT HC\": \"MGMT HC . . . . Health Care MBA\",\n    \"MGMTMBA\": \"MGMTMBA . . . Management MBA\",\n    \"MGMTPHD\": \"MGMTPHD . . . .Management PhD\",\n    \"MIC BIO\": \"MIC BIO . . . . . .Microbiology\",\n    \"MOL BIO\": \"MOL BIO . . . . . Molecular Biology and Biochemistry\",\n    \"MPAC\": \"MPAC . . . . . . .Accounting\",\n    \"MSE\": \"MSE . . . . . . . . Materials Science and Engineering (2018 Fall to 2018 Fall)\",\n    \"MUSIC\": \"MUSIC . . . . . . .Music\",\n    \"NET SYS\": \"NET SYS . . . . .Networked Systems\",\n    \"NEURBIO\": \"NEURBIO . . . . .Neurobiology and Behavior\",\n    \"NEUROL\": \"NEUROL . . . . . Neurology\",\n    \"NUR SCI\": \"NUR SCI . . . . . Nursing Science\",\n    \"OB/GYN\": \"OB/GYN . . . . . Obstetrics and Gynecology\",\n    \"OPHTHAL\": \"OPHTHAL . . . . Ophthalmology\",\n    \"PATH\": \"PATH . . . . . . . Pathology and Laboratory Medicine\",\n    \"PED GEN\": \"PED GEN . . . . Pediatrics Genetics\",\n    \"PEDS\": \"PEDS . . . . . . . Pediatrics\",\n    \"PERSIAN\": \"PERSIAN . . . . .Persian\",\n    \"PHARM\": \"PHARM . . . . . .Medical Pharmacology\",\n    \"PHILOS\": \"PHILOS . . . . . .Philosophy\",\n    \"PHRMSCI\": \"PHRMSCI . . . . Pharmaceutical Sciences\",\n    \"PHY SCI\": \"PHY SCI . . . . . Physical Science\",\n    \"PHYSICS\": \"PHYSICS . . . . .Physics\",\n    \"PHYSIO\": \"PHYSIO . . . . . .Physiology and Biophysics\",\n    \"PLASTIC\": \"PLASTIC . . . . . Plastic Surgery (started 2014 Fall)\",\n    \"PM&R\": \"PM&R . . . . . . .Physical Medicine and Rehabilitation\",\n    \"POL SCI\": \"POL SCI . . . . . Political Science\",\n    \"PORTUG\": \"PORTUG . . . . . Portuguese\",\n    \"PP&D\": \"PP&D . . . . . . . Planning, Policy, and Design (until 2018 SS2; see UPPP)\",\n    \"PSCI\": \"PSCI . . . . . . . .Psychological Science (started 2019 Fall)\",\n    \"PSY BEH\": \"PSY BEH . . . . .Psychology and Social Behavior (until 2019 SS2)\",\n    \"PSYCH\": \"PSYCH . . . . . . Psychology\",\n    \"PUB POL\": \"PUB POL . . . . .Public Policy\",\n    \"PUBHLTH\": \"PUBHLTH . . . . Public Health\",\n    \"RADIO\": \"RADIO . . . . . . .Radiology\",\n    \"REL STD\": \"REL STD . . . . . Religious Studies\",\n    \"ROTC\": \"ROTC . . . . . . . Reserve Officers' Training Corps\",\n    \"RUSSIAN\": \"RUSSIAN . . . . .Russian\",\n    \"SOC SCI\": \"SOC SCI . . . . . Social Science\",\n    \"SOCECOL\": \"SOCECOL . . . . Social Ecology\",\n    \"SOCIOL\": \"SOCIOL . . . . . .Sociology\",\n    \"SPANISH\": \"SPANISH . . . . .Spanish\",\n    \"SPPS\": \"SPPS . . . . . . . Social Policy & Public Service (started 2016 Wtr)\",\n    \"STATS\": \"STATS . . . . . . .Statistics\",\n    \"SURGERY\": \"SURGERY . . . .Surgery\",\n    \"SWE\": \"SWE . . . . . . . .Software Engineering (started 2019 Fall)\",\n    \"TAGALOG\": \"TAGALOG . . . . Tagalog\",\n    \"TOX\": \"TOX . . . . . . . . .Toxicology\",\n    \"UCDC\": \"UCDC . . . . . . . UC Washington DC\",\n    \"UNI AFF\": \"UNI AFF . . . . . .University Affairs\",\n    \"UNI STU\": \"UNI STU . . . . . .University Studies\",\n    \"UPPP\": \"UPPP . . . . . . . Urban Planning and Public Policy (started 2018 Fall)\",\n    \"VIETMSE\": \"VIETMSE . . . . .Vietnamese\",\n    \"VIS STD\": \"VIS STD . . . . . .Visual Studies\",\n    \"WOMN ST\": \"WOMN ST . . . . Women's Studies (until 2014 SS2)\",\n    \"WRITING\": \"WRITING . . . . . Writing\"\n}"
+			}]
 		},
 		{
 			"name": "/Dept/<department_name>",
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "{{url}}/Dept/I&C SCI",
+				"url": "{{url}}/Dept/VIETMSE",
 				"description": "Returns all of the classes under a specified Department.",
 				"body": ""
 			},
-			"response": []
+			"response": [{
+				"name": "/Dept/VIETMSE",
+				"originalRequest": {
+					"method": "GET",
+					"header": [],
+					"url": "{{url}}/Dept/VIETMSE",
+					"body": ""
+				},
+				"status": "OK",
+				"code": 200,
+				"_postman_previewlanguage": "json",
+				"header": [{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Length",
+						"value": "1585"
+					},
+					{
+						"key": "Server",
+						"value": "Werkzeug/0.12.2 Python/3.7.3"
+					},
+					{
+						"key": "Date",
+						"value": "Sat, 01 Jun 2019 00:09:27 GMT"
+					}
+				],
+				"cookie": [],
+				"body": "{\n    \"32410\": {\n        \"code\": \"32410\",\n        \"type\": \"Lec\",\n        \"sec\": \"A\",\n        \"units\": \"5\",\n        \"instructor\": \"TRAN, T.\",\n        \"time\": \"MW  10:00-11:50 /F  10:00-10:50 \",\n        \"place\": \"HICF 100Q///HICF 100Q\",\n        \"final\": \"Tue, Dec 10, 1:30-3:30pm\",\n        \"max\": \"24\",\n        \"enr\": \"11\",\n        \"wl\": \"0\",\n        \"req\": \"44\",\n        \"nor\": \"0\",\n        \"rstr\": \"A\",\n        \"status\": \"OPEN\"\n    },\n    \"32430\": {\n        \"code\": \"32430\",\n        \"type\": \"Lec\",\n        \"sec\": \"A\",\n        \"units\": \"4\",\n        \"instructor\": \"TRAN, T.\",\n        \"time\": \"TuTh  10:00-11:50 \",\n        \"place\": \"HH 112\",\n        \"final\": \"Thu, Dec 12, 10:30-12:30pm\",\n        \"max\": \"24\",\n        \"enr\": \"5\",\n        \"wl\": \"0\",\n        \"req\": \"13\",\n        \"nor\": \"0\",\n        \"rstr\": \"A\",\n        \"status\": \"OPEN\"\n    },\n    \"32450\": {\n        \"code\": \"32450\",\n        \"type\": \"Act\",\n        \"sec\": \"A\",\n        \"units\": \"1\",\n        \"instructor\": \"STAFF\",\n        \"time\": \"  TBA\",\n        \"place\": \"TBA\",\n        \"final\": \"  TBA\",\n        \"max\": \"15\",\n        \"enr\": \"0\",\n        \"wl\": \"n/a\",\n        \"req\": \"1\",\n        \"nor\": \"0\",\n        \"rstr\": \"B and D\",\n        \"status\": \"OPEN\"\n    },\n    \"32460\": {\n        \"code\": \"32460\",\n        \"type\": \"Act\",\n        \"sec\": \"A\",\n        \"units\": \"1\",\n        \"instructor\": \"STAFF\",\n        \"time\": \"  TBA\",\n        \"place\": \"TBA\",\n        \"final\": \"  TBA\",\n        \"max\": \"15\",\n        \"enr\": \"0\",\n        \"wl\": \"n/a\",\n        \"req\": \"0\",\n        \"nor\": \"0\",\n        \"rstr\": \"B and D\",\n        \"status\": \"OPEN\"\n    }\n}"
+			}]
 		},
 		{
 			"name": "/YearTerms",
@@ -66,10 +186,40 @@
 				"method": "GET",
 				"header": [],
 				"url": "{{url}}/YearTerms",
-				"description": "Gives a list of the possible YearTerms mapped to their code.",
+				"description": "Returns a list of the possible YearTerms mapped to their codes.",
 				"body": ""
 			},
-			"response": []
+			"response": [{
+				"name": "/YearTerms",
+				"originalRequest": {
+					"method": "GET",
+					"header": [],
+					"url": "{{url}}/YearTerms",
+					"body": ""
+				},
+				"status": "OK",
+				"code": 200,
+				"_postman_previewlanguage": "json",
+				"header": [{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Length",
+						"value": "1653"
+					},
+					{
+						"key": "Server",
+						"value": "Werkzeug/0.12.2 Python/3.7.3"
+					},
+					{
+						"key": "Date",
+						"value": "Fri, 31 May 2019 23:15:25 GMT"
+					}
+				],
+				"cookie": [],
+				"body": "{\n    \"2019-92\": \"2019  Fall Quarter\",\n    \"2019-76\": \"2019  Summer Session 2\",\n    \"2019-51\": \"2019  Summer Qtr (COM)\",\n    \"2019-39\": \"2019  10-wk Summer\",\n    \"2019-25\": \"2019  Summer Session 1\",\n    \"2019-14\": \"2019  Spring Quarter\",\n    \"2019-03\": \"2019  Winter Quarter\",\n    \"2018-92\": \"2018  Fall Quarter\",\n    \"2018-76\": \"2018  Summer Session 2\",\n    \"2018-51\": \"2018  Summer Qtr (COM)\",\n    \"2018-39\": \"2018  10-wk Summer\",\n    \"2018-25\": \"2018  Summer Session 1\",\n    \"2018-14\": \"2018  Spring Quarter\",\n    \"2018-03\": \"2018  Winter Quarter\",\n    \"2017-92\": \"2017  Fall Quarter\",\n    \"2017-76\": \"2017  Summer Session 2\",\n    \"2017-51\": \"2017  Summer Qtr (COM)\",\n    \"2017-39\": \"2017  10-wk Summer\",\n    \"2017-25\": \"2017  Summer Session 1\",\n    \"2017-14\": \"2017  Spring Quarter\",\n    \"2017-03\": \"2017  Winter Quarter\",\n    \"2016-92\": \"2016  Fall Quarter\",\n    \"2016-76\": \"2016  Summer Session 2\",\n    \"2016-51\": \"2016  Summer Qtr (COM)\",\n    \"2016-39\": \"2016  10-wk Summer\",\n    \"2016-25\": \"2016  Summer Session 1\",\n    \"2016-14\": \"2016  Spring Quarter\",\n    \"2016-03\": \"2016  Winter Quarter\",\n    \"2015-92\": \"2015  Fall Quarter\",\n    \"2015-76\": \"2015  Summer Session 2\",\n    \"2015-51\": \"2015  Summer Qtr (COM)\",\n    \"2015-39\": \"2015  10-wk Summer\",\n    \"2015-25\": \"2015  Summer Session 1\",\n    \"2015-14\": \"2015  Spring Quarter\",\n    \"2015-03\": \"2015  Winter Quarter\",\n    \"2014-92\": \"2014  Fall Quarter\",\n    \"2014-76\": \"2014  Summer Session 2\",\n    \"2014-51\": \"2014  Summer Qtr (COM)\",\n    \"2014-39\": \"2014  10-wk Summer\",\n    \"2014-25\": \"2014  Summer Session 1\",\n    \"2014-14\": \"2014  Spring Quarter\",\n    \"2014-03\": \"2014  Winter Quarter\"\n}"
+			}]
 		},
 		{
 			"name": "/Divisions",
@@ -77,10 +227,164 @@
 				"method": "GET",
 				"header": [],
 				"url": "{{url}}/Divisions",
-				"description": "Gives a list of the possible Divisions with their codes.",
+				"description": "Returns a list of the possible Divisions mapped to their codes.",
 				"body": ""
 			},
-			"response": []
+			"response": [{
+				"name": "/Divisions",
+				"originalRequest": {
+					"method": "GET",
+					"header": [],
+					"url": "{{url}}/Divisions",
+					"body": ""
+				},
+				"status": "OK",
+				"code": 200,
+				"_postman_previewlanguage": "json",
+				"header": [{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Length",
+						"value": "146"
+					},
+					{
+						"key": "Server",
+						"value": "Werkzeug/0.12.2 Python/3.7.3"
+					},
+					{
+						"key": "Date",
+						"value": "Fri, 31 May 2019 23:15:12 GMT"
+					}
+				],
+				"cookie": [],
+				"body": "{\n    \"ANY\": \"Any course division\",\n    \"0xx\": \"Lower Division only\",\n    \"1xx\": \"Upper Division only\",\n    \"2xx\": \"Graduate/Professional only\"\n}"
+			}]
+		},
+		{
+			"name": "/class",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Class?Dept=AFAM&CourseNum=40A",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Class"
+					],
+					"query": [{
+							"key": "Dept",
+							"value": "AFAM"
+						},
+						{
+							"key": "CourseNum",
+							"value": "40A"
+						}
+					]
+				},
+				"description": "Returns a list of classes that satisfy the given query params.",
+				"body": ""
+			},
+			"response": [{
+					"name": "/class?Dept=PHYSICS&CourseNum=20E",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/class?Dept=PHYSICS&CourseNum=20E",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"class"
+							],
+							"query": [{
+									"key": "Dept",
+									"value": "PHYSICS"
+								},
+								{
+									"key": "CourseNum",
+									"value": "20E"
+								}
+							]
+						},
+						"body": ""
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1166"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/0.12.2 Python/3.7.3"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 31 May 2019 23:14:20 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"47454\": {\n        \"code\": \"47454\",\n        \"type\": \"Lec\",\n        \"sec\": \"A\",\n        \"units\": \"4\",\n        \"instructor\": \"STAFF\",\n        \"time\": \"TuTh  12:30- 1:50p\",\n        \"place\": \"RH 104\",\n        \"final\": \"Fri, Dec 13, 10:30-12:30pm\",\n        \"max\": \"124\",\n        \"enr\": \"89\",\n        \"wl\": \"0\",\n        \"req\": \"108\",\n        \"nor\": \"0\",\n        \"rstr\": \"\",\n        \"status\": \"OPEN\"\n    },\n    \"47455\": {\n        \"code\": \"47455\",\n        \"type\": \"Dis\",\n        \"sec\": \"A1\",\n        \"units\": \"0\",\n        \"instructor\": \"STAFF/STAFF\",\n        \"time\": \"Tu 5:00- 5:50p\",\n        \"place\": \"SH 174\",\n        \"final\": \"\",\n        \"max\": \"62\",\n        \"enr\": \"62\",\n        \"wl\": \"0\",\n        \"req\": \"65\",\n        \"nor\": \"0\",\n        \"rstr\": \"\",\n        \"status\": \"Waitl\"\n    },\n    \"47456\": {\n        \"code\": \"47456\",\n        \"type\": \"Dis\",\n        \"sec\": \"A2\",\n        \"units\": \"0\",\n        \"instructor\": \"STAFF/STAFF\",\n        \"time\": \"Th 5:00- 5:50p\",\n        \"place\": \"SH 128\",\n        \"final\": \"\",\n        \"max\": \"62\",\n        \"enr\": \"27\",\n        \"wl\": \"0\",\n        \"req\": \"29\",\n        \"nor\": \"0\",\n        \"rstr\": \"\",\n        \"status\": \"OPEN\"\n    }\n}"
+				},
+				{
+					"name": "/class?Dept=AFAM&CourseNum=40A",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/class?Dept=AFAM&CourseNum=40A",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"class"
+							],
+							"query": [{
+									"key": "Dept",
+									"value": "AFAM"
+								},
+								{
+									"key": "CourseNum",
+									"value": "40A"
+								}
+							]
+						},
+						"body": ""
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "3496"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/0.12.2 Python/3.7.3"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 31 May 2019 23:11:22 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"20240\": {\n        \"code\": \"20240\",\n        \"type\": \"Lec\",\n        \"sec\": \"A\",\n        \"units\": \"4\",\n        \"instructor\": \"MURILLO, J.\",\n        \"time\": \"MWF 2:00- 2:50p\",\n        \"place\": \"PCB 1100\",\n        \"final\": \"Fri, Dec 13, 1:30-3:30pm\",\n        \"max\": \"180\",\n        \"enr\": \"180\",\n        \"wl\": \"7\",\n        \"req\": \"250\",\n        \"nor\": \"0\",\n        \"rstr\": \"\",\n        \"status\": \"Waitl\"\n    },\n    \"20241\": {\n        \"code\": \"20241\",\n        \"type\": \"Dis\",\n        \"sec\": \"1\",\n        \"units\": \"0\",\n        \"instructor\": \"STAFF/MURILLO, J.\",\n        \"time\": \"F 1:00- 1:50p\",\n        \"place\": \"HH 226\",\n        \"final\": \"\",\n        \"max\": \"30\",\n        \"enr\": \"30\",\n        \"wl\": \"4\",\n        \"req\": \"33\",\n        \"nor\": \"0\",\n        \"rstr\": \"\",\n        \"status\": \"Waitl\"\n    },\n    \"20242\": {\n        \"code\": \"20242\",\n        \"type\": \"Dis\",\n        \"sec\": \"2\",\n        \"units\": \"0\",\n        \"instructor\": \"STAFF/MURILLO, J.\",\n        \"time\": \"F  10:00-10:50 \",\n        \"place\": \"SST 238\",\n        \"final\": \"\",\n        \"max\": \"30\",\n        \"enr\": \"30\",\n        \"wl\": \"2\",\n        \"req\": \"37\",\n        \"nor\": \"0\",\n        \"rstr\": \"\",\n        \"status\": \"Waitl\"\n    },\n    \"20243\": {\n        \"code\": \"20243\",\n        \"type\": \"Dis\",\n        \"sec\": \"3\",\n        \"units\": \"0\",\n        \"instructor\": \"STAFF/MURILLO, J.\",\n        \"time\": \"F  12:00-12:50p\",\n        \"place\": \"SST 238\",\n        \"final\": \"\",\n        \"max\": \"30\",\n        \"enr\": \"30\",\n        \"wl\": \"1\",\n        \"req\": \"33\",\n        \"nor\": \"0\",\n        \"rstr\": \"\",\n        \"status\": \"Waitl\"\n    },\n    \"20244\": {\n        \"code\": \"20244\",\n        \"type\": \"Dis\",\n        \"sec\": \"4\",\n        \"units\": \"0\",\n        \"instructor\": \"STAFF/MURILLO, J.\",\n        \"time\": \"F  11:00-11:50 \",\n        \"place\": \"SST 238\",\n        \"final\": \"\",\n        \"max\": \"30\",\n        \"enr\": \"30\",\n        \"wl\": \"1\",\n        \"req\": \"29\",\n        \"nor\": \"0\",\n        \"rstr\": \"\",\n        \"status\": \"Waitl\"\n    },\n    \"20245\": {\n        \"code\": \"20245\",\n        \"type\": \"Dis\",\n        \"sec\": \"5\",\n        \"units\": \"0\",\n        \"instructor\": \"STAFF/MURILLO, J.\",\n        \"time\": \"F 2:00- 2:50p\",\n        \"place\": \"SST 238\",\n        \"final\": \"\",\n        \"max\": \"0\",\n        \"enr\": \"0\",\n        \"wl\": \"n/a\",\n        \"req\": \"4\",\n        \"nor\": \"0\",\n        \"rstr\": \"\",\n        \"status\": \"FULL\"\n    },\n    \"20246\": {\n        \"code\": \"20246\",\n        \"type\": \"Dis\",\n        \"sec\": \"6\",\n        \"units\": \"0\",\n        \"instructor\": \"STAFF/MURILLO, J.\",\n        \"time\": \"F 3:00- 3:50p\",\n        \"place\": \"SST 238\",\n        \"final\": \"\",\n        \"max\": \"30\",\n        \"enr\": \"30\",\n        \"wl\": \"4\",\n        \"req\": \"32\",\n        \"nor\": \"0\",\n        \"rstr\": \"\",\n        \"status\": \"Waitl\"\n    },\n    \"20247\": {\n        \"code\": \"20247\",\n        \"type\": \"Dis\",\n        \"sec\": \"7\",\n        \"units\": \"0\",\n        \"instructor\": \"STAFF/MURILLO, J.\",\n        \"time\": \"F 4:00- 4:50p\",\n        \"place\": \"HICF 100L\",\n        \"final\": \"\",\n        \"max\": \"30\",\n        \"enr\": \"21\",\n        \"wl\": \"0\",\n        \"req\": \"26\",\n        \"nor\": \"0\",\n        \"rstr\": \"\",\n        \"status\": \"OPEN\"\n    },\n    \"20248\": {\n        \"code\": \"20248\",\n        \"type\": \"Dis\",\n        \"sec\": \"8\",\n        \"units\": \"0\",\n        \"instructor\": \"STAFF/MURILLO, J.\",\n        \"time\": \"F 2:00- 2:50p\",\n        \"place\": \"HICF 100L\",\n        \"final\": \"\",\n        \"max\": \"0\",\n        \"enr\": \"0\",\n        \"wl\": \"n/a\",\n        \"req\": \"0\",\n        \"nor\": \"0\",\n        \"rstr\": \"\",\n        \"status\": \"FULL\"\n    }\n}"
+				}
+			]
 		}
 	]
 }
