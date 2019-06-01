@@ -1,25 +1,30 @@
 # WebSoc Endpoints
 
-----------------
+---
 
 # Introduction
+
 Returns data on UCI classes by scrapping WebSoc. Classes can be filtered by departments and breadths, as well as other query paramteters.
 
 # Overview
+
 This service is in its early stages and will likely see significant updates, deprecating functionalities currently avaliable.
 
 # Authentication
+
 There is no authentication in this iteration of the service.
 
 # Error Codes
+
 200 - data was returned ok
 404 - data not found
 500 - internal server error
 
 # Rate limit
+
 There is no limit on the number of requests. A future iteration of this API will have authentication and all users will have to register and be approved. Upon approval, your account will be created.
 
-----------------
+---
 
 ## /filters
 
@@ -29,33 +34,30 @@ GET {{url}}/filters
 
 Returns all of the possible filters/query params that can be used to select classes.
 
-----------------
+---
 
 ### Request
 
-> 
+>
 
 ### Examples:
 
-> 
 > **Example: /filters**
-> 
-> > 
+>
 > > ```
 > > GET {{url}}/filters
 > > ```
-> > 
+> >
 > > **Request**
-> > 
-> > > 
-> > 
-> > ----------------
-> > 
+> >
+> > >
+> >
+> > ---
+> >
 > > **Response**
-> > 
-> > > 
+> >
 > > > **Body**
-> > > 
+> > >
 > > > ```
 > > > {
 > > >   "YearTerm": "Year and Term",
@@ -66,11 +68,8 @@ Returns all of the possible filters/query params that can be used to select clas
 > > >   "CourseCodes": "Course Codes Ex. 14200, 29000-29010"
 > > > }
 > > > ```
-> > > 
-> > 
-> 
 
-----------------
+---
 
 ## /Breadths
 
@@ -80,33 +79,30 @@ GET {{url}}/Breadths
 
 Returns a list of the possible breadths maped to their codes.
 
-----------------
+---
 
 ### Request
 
-> 
+>
 
 ### Examples:
 
-> 
 > **Example: /Breadths**
-> 
-> > 
+>
 > > ```
 > > GET {{url}}/Breadths
 > > ```
-> > 
+> >
 > > **Request**
-> > 
-> > > 
-> > 
-> > ----------------
-> > 
+> >
+> > >
+> >
+> > ---
+> >
 > > **Response**
-> > 
-> > > 
+> >
 > > > **Body**
-> > > 
+> > >
 > > > ```
 > > > {
 > > >   "2": "Breadth II: Natural Sciences",
@@ -133,11 +129,8 @@ Returns a list of the possible breadths maped to their codes.
 > > >   "7B": "Breadth VIIb: International/global Issues"
 > > > }
 > > > ```
-> > > 
-> > 
-> 
 
-----------------
+---
 
 ## /Breadth/<breadth_name>
 
@@ -147,17 +140,17 @@ GET {{url}}/Breadth/4
 
 Returns all of the classes under a specified Breadth.
 
-----------------
+---
 
 ### Request
 
-> 
+>
 
 ### Examples:
 
-> 
+>
 
-----------------
+---
 
 ## /Depts
 
@@ -167,33 +160,30 @@ GET {{url}}/Depts
 
 Returns a list of all of the possible departments mapped to their code.
 
-----------------
+---
 
 ### Request
 
-> 
+>
 
 ### Examples:
 
-> 
 > **Example: /Depts**
-> 
-> > 
+>
 > > ```
 > > GET {{url}}/Depts
 > > ```
-> > 
+> >
 > > **Request**
-> > 
-> > > 
-> > 
-> > ----------------
-> > 
+> >
+> > >
+> >
+> > ---
+> >
 > > **Response**
-> > 
-> > > 
+> >
 > > > **Body**
-> > > 
+> > >
 > > > ```
 > > > {
 > > >   " ALL": "Include All Departments",
@@ -346,11 +336,8 @@ Returns a list of all of the possible departments mapped to their code.
 > > >   "WRITING": "WRITING . . . . . Writing"
 > > > }
 > > > ```
-> > > 
-> > 
-> 
 
-----------------
+---
 
 ## /Dept/<department_name>
 
@@ -360,33 +347,30 @@ GET {{url}}/Dept/VIETMSE
 
 Returns all of the classes under a specified Department.
 
-----------------
+---
 
 ### Request
 
-> 
+>
 
 ### Examples:
 
-> 
 > **Example: /Dept/VIETMSE**
-> 
-> > 
+>
 > > ```
 > > GET {{url}}/Dept/VIETMSE
 > > ```
-> > 
+> >
 > > **Request**
-> > 
-> > > 
-> > 
-> > ----------------
-> > 
+> >
+> > >
+> >
+> > ---
+> >
 > > **Response**
-> > 
-> > > 
+> >
 > > > **Body**
-> > > 
+> > >
 > > > ```
 > > > {
 > > >   "32410": {
@@ -459,11 +443,8 @@ Returns all of the classes under a specified Department.
 > > >   }
 > > > }
 > > > ```
-> > > 
-> > 
-> 
 
-----------------
+---
 
 ## /YearTerms
 
@@ -473,33 +454,30 @@ GET {{url}}/YearTerms
 
 Returns a list of the possible YearTerms mapped to their codes.
 
-----------------
+---
 
 ### Request
 
-> 
+>
 
 ### Examples:
 
-> 
 > **Example: /YearTerms**
-> 
-> > 
+>
 > > ```
 > > GET {{url}}/YearTerms
 > > ```
-> > 
+> >
 > > **Request**
-> > 
-> > > 
-> > 
-> > ----------------
-> > 
+> >
+> > >
+> >
+> > ---
+> >
 > > **Response**
-> > 
-> > > 
+> >
 > > > **Body**
-> > > 
+> > >
 > > > ```
 > > > {
 > > >   "2019-92": "2019  Fall Quarter",
@@ -546,11 +524,8 @@ Returns a list of the possible YearTerms mapped to their codes.
 > > >   "2014-03": "2014  Winter Quarter"
 > > > }
 > > > ```
-> > > 
-> > 
-> 
 
-----------------
+---
 
 ## /Divisions
 
@@ -560,33 +535,30 @@ GET {{url}}/Divisions
 
 Returns a list of the possible Divisions mapped to their codes.
 
-----------------
+---
 
 ### Request
 
-> 
+>
 
 ### Examples:
 
-> 
 > **Example: /Divisions**
-> 
-> > 
+>
 > > ```
 > > GET {{url}}/Divisions
 > > ```
-> > 
+> >
 > > **Request**
-> > 
-> > > 
-> > 
-> > ----------------
-> > 
+> >
+> > >
+> >
+> > ---
+> >
 > > **Response**
-> > 
-> > > 
+> >
 > > > **Body**
-> > > 
+> > >
 > > > ```
 > > > {
 > > >   "ANY": "Any course division",
@@ -595,11 +567,8 @@ Returns a list of the possible Divisions mapped to their codes.
 > > >   "2xx": "Graduate/Professional only"
 > > > }
 > > > ```
-> > > 
-> > 
-> 
 
-----------------
+---
 
 ## /class
 
@@ -609,47 +578,40 @@ GET {{url}}/Class?Dept=AFAM&CourseNum=40A
 
 Returns a list of classes that satisfy the given query params.
 
-----------------
+---
 
 ### Request
 
-> 
 > **Query**
-> 
-> |Key|Value|Description|
-> |---|---|---|
-> |Dept|AFAM||
-> |CourseNum|40A||
-> 
+>
+> | Key       | Value | Description |
+> | --------- | ----- | ----------- |
+> | Dept      | AFAM  |             |
+> | CourseNum | 40A   |             |
 
 ### Examples:
 
-> 
 > **Example: /class?Dept=PHYSICS&CourseNum=20E**
-> 
-> > 
+>
 > > ```
 > > GET {{url}}/class?Dept=PHYSICS&CourseNum=20E
 > > ```
-> > 
+> >
 > > **Request**
-> > 
-> > > 
+> >
 > > > **Query**
-> > > 
-> > > |Key|Value|Description|
-> > > |---|---|---|
-> > > |Dept|PHYSICS||
-> > > |CourseNum|20E||
-> > > 
-> > 
-> > ----------------
-> > 
+> > >
+> > > | Key       | Value   | Description |
+> > > | --------- | ------- | ----------- |
+> > > | Dept      | PHYSICS |             |
+> > > | CourseNum | 20E     |             |
+> >
+> > ---
+> >
 > > **Response**
-> > 
-> > > 
+> >
 > > > **Body**
-> > > 
+> > >
 > > > ```
 > > > {
 > > >   "47454": {
@@ -705,34 +667,28 @@ Returns a list of classes that satisfy the given query params.
 > > >   }
 > > > }
 > > > ```
-> > > 
-> > 
-> 
+>
 > **Example: /class?Dept=AFAM&CourseNum=40A**
-> 
-> > 
+>
 > > ```
 > > GET {{url}}/class?Dept=AFAM&CourseNum=40A
 > > ```
-> > 
+> >
 > > **Request**
-> > 
-> > > 
+> >
 > > > **Query**
-> > > 
-> > > |Key|Value|Description|
-> > > |---|---|---|
-> > > |Dept|AFAM||
-> > > |CourseNum|40A||
-> > > 
-> > 
-> > ----------------
-> > 
+> > >
+> > > | Key       | Value | Description |
+> > > | --------- | ----- | ----------- |
+> > > | Dept      | AFAM  |             |
+> > > | CourseNum | 40A   |             |
+> >
+> > ---
+> >
 > > **Response**
-> > 
-> > > 
+> >
 > > > **Body**
-> > > 
+> > >
 > > > ```
 > > > {
 > > >   "20240": {
@@ -890,16 +846,9 @@ Returns a list of classes that satisfy the given query params.
 > > >   }
 > > > }
 > > > ```
-> > > 
-> > 
-> 
 
-----------------
+---
 
-----------------
+---
 
-Built with [Postdown][PyPI].
-
-Author: [Titor](https://github.com/TitorX)
-
-[PyPI]:    https://pypi.python.org/pypi/Postdown
+Author: [Zachary Pinto](https://github.com/zpinto)
