@@ -16,9 +16,9 @@ There is no authentication in this iteration of the service.
 
 # Error Codes
 
-200 - data was returned ok
-404 - data not found
-500 - internal server error
+- 200 - data was returned ok
+- 404 - data not found
+- 500 - internal server error
 
 # Rate limit
 
