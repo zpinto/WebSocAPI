@@ -1,4 +1,4 @@
-# WebSoc Endpoints
+# WebSoc API
 
 ---
 
