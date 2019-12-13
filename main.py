@@ -11,6 +11,12 @@ from resources.course import Course
 app = Flask(__name__)
 api = Api(app)
 
+
+@app.route('/', methods=['GET'])
+def index():
+    return "<h1>WebSocAPI</h1><a href=\"https://documenter.getpostman.com/view/7420490/S1TVXxde\"><h2>Refer to the documentation.</h2></a><ul><li>/filter</li><li>/Breadths</li><li>/Breadths<breadth_name></li><li>/Breadths/{breadth_name}</li><li>/Depts</li><li>/Dept/{department_name}</li><li>/YearTerm</li><li>/Divisions</li><li>/class?</li></ul>"
+
+
 api.add_resource(FilterList, '/filters')
 api.add_resource(Breadth, '/Breadth/<string:breadth_name>')
 api.add_resource(BreadthList, '/Breadths')

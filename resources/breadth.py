@@ -1,3 +1,5 @@
+import copy
+
 from flask_restful import Resource
 from scrapy import get_class_info, get_select
 from config import BASE_URL, REQUIRED_ARGS
@@ -5,7 +7,7 @@ from config import BASE_URL, REQUIRED_ARGS
 
 class Breadth(Resource):
     def get(self, breadth_name):
-        args = REQUIRED_ARGS
+        args = copy.deepcopy(REQUIRED_ARGS)
         args['Breadth'] = breadth_name
         classes = get_class_info(BASE_URL, "", args)
 

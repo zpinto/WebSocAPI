@@ -2,14 +2,36 @@ from bs4 import BeautifulSoup
 from config import BASE_URL
 import urllib.request
 import html5lib
+import random
 import time
 import re
+
+# YearTerm=2020-03
+# Breadth=ANY&
+# Dept=COMPSCI&
+# CourseCodes=&
+# CourseNum=&
+# CourseTitle=&
+# InstrName=&
+# Division=ANY&
+# ClassType=ALL&
+# Units=&
+# Days=&
+# StartTime=&
+# EndTime=&
+# FullCourses=ANY&
+# ShowComments=on&
+# ShowFinals=on
 
 
 def get_class_info(base_url, path, args_dict):
     classes = {}
+    args_dict['FontSize'] = random.randint(
+        1, 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000)
     url = format_url(base_url, path, args_dict)
-    soup = BeautifulSoup(get_html(url), "html5lib").find(
+    html = get_html(url)
+    # print(html)
+    soup = BeautifulSoup(html, "html5lib").find(
         'div', class_="course-list")
     if not soup:
         return None
