@@ -1,6 +1,6 @@
 bs4
 urllib3
 html5lib
-Flask-RESTful==0.3.7
-Flask==1.0.2
-Werkzeug==0.15.4
+Flask-RESTful
+Flask
+Werkzeug

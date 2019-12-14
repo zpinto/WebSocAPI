@@ -15,5 +15,9 @@
 
 # Python pycache:
 __pycache__/
+
+# Virtual Env
+env
+
 # Ignored by the build system
 /setup.cfg
